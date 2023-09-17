@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <link rel="stylesheet" type="text/css" href="style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 
@@ -13,36 +13,56 @@
     <h1>To Do List</h1>
     <div id="container">
         <!-- Add Task -->
-        <div id="left">
-            <form id="form">
-                <label for="task"><h2>New Task</h2></label>
-                  <input name="task" id="task"></input>
+        <div id="addTask">
+          <section id="modal" class="hidden">
+            <div id="top">
+              <img src="images/cleaning.png" width="50px" height="50px" alt="placeholder" />
+              <button id="close">⨉</button>
+            </div>
+              <div class="modal-body">
+                  <p>Task Title</p>
+                  <input type="text" class="form-element" name="" id="textInput" />
                   <div id="msg"></div>
-                  <button type="submit">Post</button>
-            </form>
+                  <br />
+                  <p>Due Date</p>
+                  <input type="date" class="form-element" name="" id="dateInput" />
+                  <br />
+                  <p>Description</p>
+                  <textarea
+                    name=""
+                    class="form-element"
+                    id="textarea"
+                    cols="30"
+                    rows="5"
+                  ></textarea>
+                </div>
+                <div id="modal-footer">
+                  <button type="submit" id="addButton">Add Task</button>
+                </div>
+              </div>
+          </section>
+
+          <div id="overlay" class="hidden"></div>
+          <button id="newTask">New Task</button>
         </div>
-            
+
         <div id="right">
                 <!-- Task List -->
             <h2>Task List</h2>
-            <div id="task-list">
-                <div>
-                    <p>Vacuum</p>
-                    <span class="options">
-                      <i class="fas fa-edit"></i>
-                      <i class="fas fa-trash-alt"></i>
-                    </span>
-                  </div>
-                
-                  <div>
-                    <p>Finish laundry</p>
-                    <span class="options">
-                      <i class="fas fa-edit"></i>
-                      <i class="fas fa-trash-alt"></i>
-                    </span>
-                  </div>
+            <div id="labels">
+              <p>TASK</p>
+              <p>DUE DATE</p>
+              <p>DESCRIPTION</p>
             </div>
-            <button>Clear List</button>
+            <div id="task-container">
+              <div id="task-list">
+            </div>
+          <div id="icons"></div>
+
+            </div>
+            <div id="clearContainer">
+              <button id="clear">Clear List</button>
+            </div>
         </div>
     </div>
     <script type="text/javascript" src="script.js" defer></script>

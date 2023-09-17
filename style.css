@@ -15,21 +15,31 @@
     src: url('fonts/FeelfreePersonalUseRegular-lg2Bw.ttf');
   }
 
+  @font-face {
+    font-family: 'Cookie';
+    src: url('fonts/Cookiemonster-gv11.ttf');
+  }
 
   :root {
     --pink: rgb(253, 146, 187);
   }
 
+html {
+  height: 100%;
+  background-image: url('images/background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 body {
-    background-color: white;
     font-family: sans-serif;
-    margin: 0 50px;
   }
-  
+
   #container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-direction: column;
     padding: 10px;
+    align-items: center;
   }
 
   h1 {
@@ -47,14 +57,15 @@ body {
 				 1px -1px 0 #0091bd,
 				-1px -1px 0 #0091bd;
   }
-  
-  #right, #left {
+
+  #right {
       background-color: white;
-      margin: 10px;
+      width: 80%;
+      margin-top: 30px;
       padding: 10px;
       border: 10px solid var(--pink);
     }
-    
+
     i {
         cursor: pointer;
     }
@@ -62,54 +73,170 @@ body {
     h2 {
        margin-bottom: 10px;
        text-align: center;
+       font-size: 50px;
+       font-family: 'Hearts', 'Times New Roman', Times, serif;
     }
-    
+
     /* Add Task */
 
-    form {
-        display: flex;
-        flex-direction: column;
+    #addTask {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  }
+
+  #newTask {
+    height: 50px;
+    width: 300px;
+    background-color: cornflowerblue;
+    border-radius: 10px;
+    border-color: rgb(51, 122, 253);
+    color: white;
+    font-size: 30px;
+  }
+
+    #modal {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 0.4rem;
+      width: 450px;
+      padding: 1.3rem;
+      min-height: 250px;
+      position: absolute;
+      top: 20%;
+      background-color: pink;
+      border: 1px solid #ddd;
+      border-radius: 15px;
+      font-family: 'Cookie', Arial, Helvetica, sans-serif;
+      z-index: 2;
     }
 
-    input {
-        margin: 10px;
-        height: 50px;
+    #top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
 
     #msg {
-        display: flex;
-        justify-content: center;
-        font-weight: bold;
-        color: red;
-      }
-    
+      color: red;
+      font-family: sans-serif;
+    }
+
+    #modal input {
+      padding: 0.7rem 1rem;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 0.9em;
+    }
+
+    #modal p {
+      font-size: 1.5rem;
+      margin: 0.4rem 0 0.2rem;
+    }
+
+
+    #close {
+      transform: translate(10px, -20px);
+      padding: 0.5rem 0.7rem;
+      background: #eee;
+      border-radius: 50%;
+    }
+
+    #overlay {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(3px);
+      z-index: 1;
+    }
+
+    .hidden {
+      display: none!important;
+    }
+
+    #addButton {
+      height: 30px;
+      width: 125px;
+      background-color: cornflowerblue;
+      border-radius: 10px;
+      border-color: rgb(51, 122, 253);
+      color: white;
+    }
+
   /* Task List */
 
     #right {
         display: flex;
         flex-direction: column;
         justify-content: center;
+        margin: 10px auto;
+        padding: 10px 40px;
+        border: 10px solid var(--pink);
+        border-radius: 50px;
     }
 
-  #task-list div {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin: 10px;
+    #task-container {
+      display: grid;
+      grid-template-columns: 80% 20%;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+  #labels {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      width: 80%;
+      font-family:'Times New Roman', Times, serif;
+      color: rgb(255, 0, 106);
+      font-size: 20px;
+      text-decoration: underline;
   }
 
-  button {
-      height: 35px;
-      margin: 10px;
+  .task {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+  .task span {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+  }
+
+  .taskName {
+    font-weight: bold;
+  }
+
+  #icons {
+    margin: 10px;
+  }
+
+  #clear {
+    height: 35px;
+    width: 200px;
+    margin-top: 20px;
+    margin-bottom: 10px;
     background-color: cornflowerblue;
     border-radius: 10px;
     border-color: rgb(51, 122, 253);
     color: white;
+    font-size: 20px;
   }
-  
-  
+
+  #clearContainer {
+    display: flex;
+    justify-content: center;
+
+  }
+
   .options {
     display: flex;
     gap: 25px;
   }
-  
