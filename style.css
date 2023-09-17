@@ -10,6 +10,12 @@
     src: url('fonts/LucySaidOkay.ttf');
   }
 
+  @font-face {
+    font-family: 'Tasks';
+    src: url('fonts/FeelfreePersonalUseRegular-lg2Bw.ttf');
+  }
+
+
   :root {
     --pink: rgb(253, 146, 187);
   }
