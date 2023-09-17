@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+@font-face {
+    font-family: 'Hearts';
+    src: url('fonts/LucySaidOkay.ttf');
+  }
+
+  :root {
+    --pink: rgb(253, 146, 187);
+  }
+
+body {
+    background-color: white;
+    font-family: sans-serif;
+    margin: 0 50px;
+  }
+  
+  #container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 10px;
+  }
+
+  h1 {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    background-color: rgb(253, 146, 187);
+    border: 10px dashed cornflowerblue;
+    font-family: 'Hearts';
+    font-size: 60px;
+    letter-spacing: 3px;
+    color: white;
+    text-shadow: -1px 1px 0 #0091bd,
+				  1px 1px 0 #0091bd,
+				 1px -1px 0 #0091bd,
+				-1px -1px 0 #0091bd;
+  }
+  
+  #right, #left {
+      background-color: white;
+      margin: 10px;
+      padding: 10px;
+      border: 10px solid var(--pink);
+    }
+    
+    i {
+        cursor: pointer;
+    }
+
+    h2 {
+       margin-bottom: 10px;
+       text-align: center;
+    }
+    
+    /* Add Task */
+
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    input {
+        margin: 10px;
+        height: 50px;
+    }
+
+    #msg {
+        display: flex;
+        justify-content: center;
+        font-weight: bold;
+        color: red;
+      }
+    
+  /* Task List */
+
+    #right {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+  #task-list div {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 10px;
+  }
+
+  button {
+      height: 35px;
+      margin: 10px;
+    background-color: cornflowerblue;
+    border-radius: 10px;
+    border-color: rgb(51, 122, 253);
+    color: white;
+  }
+  
+  
+  .options {
+    display: flex;
+    gap: 25px;
+  }
+  
