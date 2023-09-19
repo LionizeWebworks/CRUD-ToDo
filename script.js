@@ -4,12 +4,13 @@ const textInput = document.getElementById("textInput");
 const dateInput = document.getElementById("dateInput");
 const textarea = document.getElementById("textarea");
 const msg = document.getElementById("msg");
-const addButton = document.getElementById("addButton");
+const submit = document.getElementById("submit");
 
 const modal = document.getElementById("modal");
 const overlay = document.getElementById("overlay");
 const open = document.getElementById("newTask");
 const close = document.getElementById("close");
+const clear = document.getElementById("clear");
 
 //open the modal
 open.addEventListener("click", (e) => {
@@ -26,7 +27,7 @@ overlay.classList.add("hidden");
 close.addEventListener("click", closeModal);
 
 // //prevent default form behavior
-addButton.addEventListener('click', function (e) {
+submit.addEventListener('click', function (e) {
   e.preventDefault(); // Prevent the default form submission behavior
   formValidation(); // Call your form validation function
 });
@@ -103,6 +104,21 @@ const deleteTask = (e) => {
 
   console.log(data);
 };
+
+const clearList = (e) => {
+  taskList.innerHTML = "";
+  icons.innerHTML = "";
+
+  data.length = 0;
+
+  localStorage.setItem("data", JSON.stringify(data));
+
+  console.log(data);
+};
+
+clear.addEventListener("click", (e) => {
+  clearList();
+});
 
 (() => {
   data = JSON.parse(localStorage.getItem("data")) || [];

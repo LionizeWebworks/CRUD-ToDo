@@ -42,10 +42,17 @@ body {
     align-items: center;
   }
 
+  header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
   h1 {
     display: flex;
     justify-content: center;
     margin: 20px;
+    width: 75%;
     background-color: rgb(253, 146, 187);
     border: 10px dashed cornflowerblue;
     font-family: 'Hearts', 'Times New Roman', Times, serif;
@@ -58,37 +65,41 @@ body {
 				-1px -1px 0 #0091bd;
   }
 
-  #right {
-      background-color: white;
-      width: 80%;
-      margin-top: 30px;
-      padding: 10px;
-      border: 10px solid var(--pink);
-    }
-
-    i {
+  i {
         cursor: pointer;
+        margin: 5px;
     }
 
     h2 {
-       margin-bottom: 10px;
-       text-align: center;
-       font-size: 50px;
-       font-family: 'Hearts', 'Times New Roman', Times, serif;
+      margin-bottom: 10px;
+      text-align: center;
+      font-size: 50px;
+      font-family: 'Hearts', 'Times New Roman', Times, serif;
     }
 
     /* Add Task */
 
+    /* modal */
     #addTask {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-  }
+    }
+    /* modal submit button */
+    #submit {
+      height: 30px;
+      width: 125px;
+      background-color: cornflowerblue;
+      border-radius: 10px;
+      border-color: rgb(51, 122, 253);
+      color: white;
+    }
 
   #newTask {
     height: 50px;
-    width: 300px;
+    width: 50%;
+    max-width: 400px;
     background-color: cornflowerblue;
     border-radius: 10px;
     border-color: rgb(51, 122, 253);
@@ -161,21 +172,17 @@ body {
       display: none!important;
     }
 
-    #addButton {
-      height: 30px;
-      width: 125px;
-      background-color: cornflowerblue;
-      border-radius: 10px;
-      border-color: rgb(51, 122, 253);
-      color: white;
-    }
 
-  /* Task List */
+    /* Task List */
 
-    #right {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+
+    #taskList {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background-color: white;
+      width: 80%;
+        max-width: 800px;
         margin: 10px auto;
         padding: 10px 40px;
         border: 10px solid var(--pink);
@@ -214,10 +221,13 @@ body {
     font-weight: bold;
   }
 
-  #icons {
+  .options {
+    display: flex;
     margin-top: 18px;
     margin-left: 20px;
+    color: rgb(255, 0, 106);
   }
+
 
   #clear {
     height: 35px;
@@ -235,9 +245,4 @@ body {
     display: flex;
     justify-content: center;
 
-  }
-
-  .options {
-    display: flex;
-    gap: 25px;
   }
